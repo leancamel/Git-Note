@@ -107,15 +107,82 @@ git config --global core.quotepath false
 
 ## 建立本地仓库
 
-### 本地建立
+* 本地建立
 
-```shell
-git init
-```
+  ```shell
+  git init
+  ```
 
-### 远程克隆
+* 远程克隆
 
-```shell
-git clone [URL]
-```
+  ```shell
+  git clone [URL]
+  ```
 
+## 本地仓库提交回退
+
+* 提交本地仓库
+
+  ```shell
+  git add <file>
+  git add commit -m "注释说明"
+  ```
+
+* 查看提交日志
+
+  ```shell
+  git log [option]
+  			options:
+  						--all	#显示所有分支
+  						--pretty=oneline	#将提交信息显示为一行
+  						--abbrev-commit		#使得输出的commitid更简短
+  						--graph				#以图的形式显示
+  git reflog   #显示所有操作日志
+  ```
+
+* 版本回退
+
+  ```shell
+  git reset --hard [commitid]
+  ```
+
+* 忽略特定文件
+
+  1. 工作目录下建立`.gitignore`文件
+  2. `.gitignore`中加入忽略的文件
+
+## 分支
+
+* 查看分支
+
+  ```shell
+  git branch
+  ```
+
+* 新建分支
+
+  ```shell
+  git branch [分支名]
+  ```
+
+* 删除分支
+
+  ```shell
+  git branch -d [分支名]				#需要做各种检查
+  git branch -D [分支名]				#强制删除
+  ```
+
+* 切换分支
+
+  ```shell
+  git checkout [分支名]
+  git checkout -b [分支名] 		#创建并切换到
+  ```
+
+* 合并分支
+
+  ```shell
+  git merge [dev01]			#把dev01分支合并到当前分支
+  ```
+
+  
