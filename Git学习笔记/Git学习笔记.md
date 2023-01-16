@@ -52,15 +52,17 @@ git config --blobal user.email
 
 ### 解决中文乱码问题
 
+> 参考链接：[git 显示中文和解决中文乱码 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/133706032)
+
 1. 打开Git Bash执行下面命令
 
 ```shell
 git config --global core.quotepath false
 ```
 
-2. ${git_home}/etc/bash.bashrc 文件最后加入下面两行
+2. 菜单中修改
 
-```shell
-export LANG="zh_CN.UTF-8"
-export LC_ALL="zh_CN.UTF-8"
-```
+​		在`git bash`的界面中右击空白处，弹出菜单，选择`选项->文本->本地Locale`，设置为`zh_CN`，而旁边的字符集选框选为`UTF-8`。
+
+
+
