@@ -185,4 +185,61 @@ git config --global core.quotepath false
   git merge [dev01]			#把dev01分支合并到当前分支
   ```
 
-  
+## SSH密钥
+
+1. 生成SSH公钥
+
+   1. `ssh-keygen -t rsa`
+   2. 不断回车选择默认设置
+      * 如果公钥已近存在，则自动覆盖
+
+2. 在`~/.ssh`下生成3各文件
+
+   ```shell
+   id_rsa						#本地密钥
+   id_rsa.pub				#公钥
+   known_hosts
+   ```
+
+3. 将id_rsa.pub中的内容全选复制，并粘贴远端
+
+## 远程仓库
+
+* 关联远程仓库
+
+  ```shell
+  git remote add origin [URL]		#origin为给远程仓库取的名字，规范为origin
+  ```
+
+* 查看远程仓库
+
+  ```shell
+  git remote
+  ```
+
+* 将本地仓库同步到远程仓库
+
+  ```shell
+  git push origin main
+  #完整指令如下：
+  git push [-f] [--set-upstream] [远端名称 [本地分支名 : 远端分支名]]
+  					-f							  #强制
+  					-set--upstream		#推送到远端的同时建立起和远端分支的关联关系
+  					#远端名称一般为 origin
+  					#当本地分支名与远端分支名相同时，可省去冒号，只写一个分支名
+  ```
+
+* 将远程仓库同步到本地
+
+  ```shell
+  git fetch					#将远程分支拉到本地，此时会出现origin/main的分支
+  git merge origin/main			#合并分支
+  ```
+
+  ```shell
+  git pull					#等价于上面两条指令
+  ```
+
+  ```shell
+  git fetch/pull [远端名称(origin)] [远端分支名(不指定则抓取所有分支)]
+  ```
