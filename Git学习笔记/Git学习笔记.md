@@ -64,5 +64,58 @@ git config --global core.quotepath false
 
 ​		在`git bash`的界面中右击空白处，弹出菜单，选择`选项->文本->本地Locale`，设置为`zh_CN`，而旁边的字符集选框选为`UTF-8`。
 
+## 文件状态
 
+![Git文件状态](Git学习笔记.assets/Git文件状态.png)
+
+## 常用操作指令
+
+* 创建仓库命令
+
+  ```shell
+  git init			   	   #初始化git本地仓库
+  git clone			    #拷贝一份远程仓库，也就是下载一个项目。
+  ```
+
+* 提交与修改
+
+  ```shell
+  git add					#添加文件到暂存区
+  git status			   #查看仓库当前的状态，显示有变更的文件。
+  git diff				 #比较文件的不同，即暂存区和工作区的差异。
+  git commit 			#提交暂存区到本地仓库。
+  git reset 			   #回退版本。
+  git rm				   #将文件从暂存区和工作区中删除。
+  git mv				  #移动或重命名工作区文件。
+  ```
+
+* 提交日志
+
+  ```shell
+  git log						#查看历史提交记录
+  git blame <file>	 #以列表形式查看指定文件的历史修改记录
+  ```
+
+* 远程操作
+
+  ```shell
+  git remote				#远程仓库操作
+  git fetch 				  #从远程获取代码库
+  git pull				   #下载远程代码并合并
+  git push				 #	上传远程代码并合并
+  ```
+
+## 建立本地仓库
+
+### 本地建立
+
+```shell
+git init
+```
+
+### 远程克隆
+
+```shell
+git clone [URL]
+```
 
