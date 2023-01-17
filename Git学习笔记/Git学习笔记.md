@@ -125,6 +125,7 @@ git config --global core.quotepath false
 
   ```shell
   git add <file>
+  #git rm [-r] --cached <file>将文件从暂存区移除，-r用来移除文件夹
   git add commit -m "注释说明"
   ```
 
